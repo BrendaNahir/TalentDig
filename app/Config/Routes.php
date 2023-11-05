@@ -43,13 +43,18 @@ $routes->post('/enviar-form', 'usuario_controller::formValidation');
 /* rutas del login*/
 $routes->get('/login', 'login_controller::index');
 $routes->post('/enviarlogin', 'login_controller::auth');
-//filtro que hay que crear para que acceda el usuario autorizado
-//en Config, filter.php agregaresa funcion autorizada
+//es un filtro que hay que crear para que acceda el usuario autorizado
+//en Config, filter.php agregar esa funcion autorizada
+//tambien hay que crear una vista Auth.php dentro de app, filter
 $routes->get('/panel', 'panel_controller::index', ['filter' => 'auth']);
 
 $routes->get('/logout', 'login_controller::logout');
 
+/* rutas del producto */
+$routes->get('listar_productos', 'Home::f_listar_productos');
+$routes->post('mostrar_por_categoria', 'ProductoController::categoria_productos');
 
+$routes->get('listar_productos_admi', 'Home::f_listar_productos_admi');
 
 /*
  * --------------------------------------------------------------------

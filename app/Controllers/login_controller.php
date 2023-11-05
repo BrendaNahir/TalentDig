@@ -21,7 +21,20 @@ class login_controller extends BaseController
 
     public function auth()
     {
-        //se carga en la variable $session la sesion del usuario
+        //verifica que los campos no estén vacíos.
+        $rules = [
+            'email' => 'required',
+            'pass' => 'required'
+        ];
+    
+        if (!$this->validate($rules)) {
+            // Si la validación falla, redirigir de vuelta al formulario de inicio de sesión con el mensaje de error
+            $session = session();
+            $session->setFlashdata('msg', 'Los campos son requeridos');
+            return redirect()->to('/login');
+        }
+        
+        //se carga la sesion del usuario en la variable $session
         //se guarda en un id de sesión
         $session = session();
         //se instancia el modelo
@@ -41,7 +54,8 @@ class login_controller extends BaseController
                 $session->setFlashdata('msg', '¡El usuario fue dado de baja!');
                 return redirect()->to('/login');
             }
-            //si no se cumple el primer if (el usuario no fue dado de baja, entra en el prox if), se verifican los datos ingresados para iniciar, si cumple verificación inicia la sesión
+            //si no se cumple el primer if (el usuario no fue dado de baja, entra en el prox if), se verifican los datos ingresados para iniciar, 
+            //si cumple verificación inicia la sesión
 
             //compara la contraseña ingresada desde el form con el de la tabla.
             $verify_pass = password_verify($password, $pass);

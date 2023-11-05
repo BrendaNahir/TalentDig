@@ -33,8 +33,9 @@ class usuario_controller extends BaseController
                 'pass' => 'required|min_length[5]|max_length[10]'
             ],
         );
+        //instanciamos el modelo
         $formModel = new usuario_Model();
-
+        //si no cumple con las validaciones
         if (!$input) {
             $data['titulo'] = 'Registro';
             echo view('front/head_view', $data);

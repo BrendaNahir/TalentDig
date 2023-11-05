@@ -39,4 +39,6 @@
       <p class="parrafo">Estamos dedicados a construir una comunidad que celebra la individualidad y promueve el amor propio. Nuestra pasión por la moda inclusiva y nuestro compromiso con la autoexpresión hacen que nuestra tienda sea mucho más que un lugar para comprar ropa: es un espacio donde cada mujer puede encontrar su talla perfecta de confianza y estilo.</p>
      </div>
 </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 </div>

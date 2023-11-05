@@ -28,6 +28,12 @@ $perfil = $session->get('perfil_id');
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="">Agregar productos</a>
           </li>
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?php echo base_url("listar_productos_admi");?>">Listar productos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="">Listar ventas</a>
+          </li>
         </ul>
 
         <form class="d-flex">
@@ -57,16 +63,9 @@ $perfil = $session->get('perfil_id');
           </li>
           <li class="nav-item">
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Productos
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Producto1</a></li>
-              <li><a class="dropdown-item" href="#">Producto2</a></li>
-              <li><a class="dropdown-item" href="#">Producto3</a></li>
-            </ul>
-          </li>
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?php echo base_url("listar_productos");?>">Productos</a>
+        </li>
 
         </ul>
 
@@ -75,6 +74,8 @@ $perfil = $session->get('perfil_id');
         </form>
       </div>
     <?php else : ?>
+
+      
       <!-- navbar para clientes no logueados-->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -85,7 +86,7 @@ $perfil = $session->get('perfil_id');
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="<?php echo base_url("acerca_de"); ?>">Acerca de</a>
           </li>
-          <li class="nav-item dropdown">
+          <!--li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Productos
             </a>
@@ -94,7 +95,10 @@ $perfil = $session->get('perfil_id');
               <li><a class="dropdown-item" href="#">Producto2</a></li>
               <li><a class="dropdown-item" href="#">Producto3</a></li>
             </ul>
-          </li>
+          </li-->
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?php echo base_url("listar_productos");?>">Productos</a>
+        </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="<?php echo base_url("registro"); ?>">Registrarse</a>
           </li>

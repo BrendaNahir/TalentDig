@@ -1,11 +1,11 @@
 <br>
-<h1 style="text-shadow: 2px 2px 5px red; color: black">INICIAR SESIÓN</h1>
+<h1 style="text-shadow: 2px 2px 5px red; color: pink">INICIAR SESIÓN</h1>
 
 <br>
 
 <div class="container text-center">
 
-<!-- Muestra mensaje de que se fue registrado correctamente-->
+<!-- Muestra mensaje de que fue registrado correctamente-->
 <?= csrf_field(); ?>
     <?php if (!empty(session()->getFlashdata('success'))) : ?>
         <div class="alert alert-danger"><?= session()->getFlashdata('success'); ?></div>
@@ -36,6 +36,6 @@
   </form>
   <br>
 
-  <br>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 <br>
