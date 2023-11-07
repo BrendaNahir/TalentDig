@@ -54,7 +54,8 @@ class login_controller extends BaseController
                 $session->setFlashdata('msg', '¡El usuario fue dado de baja!');
                 return redirect()->to('/login');
             }
-            //si no se cumple el primer if (el usuario no fue dado de baja, entra en el prox if), se verifican los datos ingresados para iniciar, 
+            //si no se cumple el primer if (el usuario no fue dado de baja, entra en el prox if), 
+            //y se verifican los datos ingresados para iniciar, 
             //si cumple verificación inicia la sesión
 
             //compara la contraseña ingresada desde el form con el de la tabla.

@@ -9,8 +9,6 @@
   <body>
     <header>
         <br>
-        <br>
-        <br>
         <h1 class="titulo">✿ Bienvenido a Curvas Clásicas ✿</h1>
     </header>
 

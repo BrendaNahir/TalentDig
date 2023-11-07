@@ -3,6 +3,8 @@
 namespace App\Controllers;
 use App\Models\ProductoModel;
 use App\Models\CategoriaModel;
+use App\Models\usuario_Model;
+use App\Models\PerfilModel;
 
 class Home extends BaseController
 {
@@ -40,13 +42,21 @@ class Home extends BaseController
         echo view('front/footer_view');
     }
 
+    public function carritoConstruccion()
+    {
+        $data['titulo']='carrito';
+        echo view('front/head_view',$data);
+        echo view('front/navbar_view');
+        echo view('front/carritoConstruccion');
+        echo view('front/footer_view');
+    }
+
     public function f_listar_productos($id=null){
         $categoria = new CategoriaModel();
         $data['categorias'] = $categoria->findAll();
 
         $producto=new ProductoModel();
         $data['producto']=$producto->findAll();
-
 
     $data['titulo'] = 'Lista de productos';
     echo view('front/head_view',$data);
@@ -66,6 +76,19 @@ class Home extends BaseController
         echo view('front/navbar_view');
         echo view('front/listar_productos_admi');
         echo view('front/footer_view');
+}
+
+public function f_listar_usuarios_admi($id=null){
+    $perfil= new PerfilModel();
+    $usuario=new usuario_Model();
+
+    $data['perfil']=$perfil->findAll();
+    $data['usuario']=$usuario->getUsuarioAll();
+    $data['titulo'] = 'Listado de usuarios';
+    echo view('front/head_view',$data);
+    echo view('front/navbar_view');
+    echo view('front/listar_usuarios_admi');
+    echo view('front/footer_view');
 }
 
 }

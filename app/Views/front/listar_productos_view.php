@@ -46,12 +46,17 @@ echo form_dropdown('categoria', $lista,'class="form-control"');
  <!-- si el perfil es 2 (usuario registrado), se agrega el botón de agregar al carrito -->    
  <?php 
 if (session()->perfil_id == 2){
-    echo '<button type="submit" class="btn btn-danger">Agregar al carrito</button>';
+  echo form_open('carrito');
+  echo form_hidden('id', $row['id_producto']);
+  echo form_hidden('nombre', $row['nombre_producto']);
+  echo form_hidden('precio', $row['precio']);
+  echo form_submit('Agregar al carrito', 'Agregar al carrito',"class='btn btn-danger'");
+  echo form_close();
 } else {
     echo '<p>Para realizar una compra debes registrarte <a href="'. base_url('/registro') .'">Registrarse</a></p>';
 }
 ?>
-
+ 
      </div>
     </div>
      </div>

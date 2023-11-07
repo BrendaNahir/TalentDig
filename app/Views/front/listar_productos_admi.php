@@ -14,7 +14,8 @@
       <th>Stock</th>
       <th>Categoría</th>
       <th>Imagen</th>
-  
+
+      
     </thead>
     <tbody>
       <?php foreach($producto as $row){?>

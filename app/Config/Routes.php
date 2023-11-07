@@ -47,14 +47,25 @@ $routes->post('/enviarlogin', 'login_controller::auth');
 //en Config, filter.php agregar esa funcion autorizada
 //tambien hay que crear una vista Auth.php dentro de app, filter
 $routes->get('/panel', 'panel_controller::index', ['filter' => 'auth']);
-
 $routes->get('/logout', 'login_controller::logout');
+
+$routes->get('listar_usuarios_admi', 'Home::f_listar_usuarios_admi');
 
 /* rutas del producto */
 $routes->get('listar_productos', 'Home::f_listar_productos');
 $routes->post('mostrar_por_categoria', 'ProductoController::categoria_productos');
 
 $routes->get('listar_productos_admi', 'Home::f_listar_productos_admi');
+
+
+//carrito
+$routes->get('ver_carrito', 'CarritoController::index');
+$routes->post('carrito', 'CarritoController::agregar_carrito');
+$routes->get('aumentar/(:any)', 'CarritoController::aumentar/$1');
+$routes->get('disminuir/(:any)', 'CarritoController::disminuir/$1');
+$routes->get('borrar/(:any)', 'CarritoController::borrar/$1');
+
+$routes->get('carritoConstruccion', 'Home::carritoConstruccion');
 
 /*
  * --------------------------------------------------------------------
