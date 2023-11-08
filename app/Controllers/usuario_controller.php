@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\usuario_Model;
+use App\Models\PerfilModel;
 use App\Controllers\BaseController;
 
 class usuario_controller extends BaseController
@@ -55,5 +56,18 @@ class usuario_controller extends BaseController
             session()->setFlashdata('success', '¡Ya puedes iniciar sesión en el sitio!');
             return redirect()->to(base_url('/login'));
         }
+    }
+
+    public function f_listar_usuarios_admi($id=null){
+        $perfil= new PerfilModel();
+        $usuario=new usuario_Model();
+    
+        $data['perfil']=$perfil->findAll();
+        $data['usuario']=$usuario->getUsuarioAll();
+        $data['titulo'] = 'Listado de usuarios';
+        echo view('front/head_view',$data);
+        echo view('front/navbar_view');
+        echo view('back/usuarios/listar_usuarios_admi');
+        echo view('front/footer_view');
     }
 }

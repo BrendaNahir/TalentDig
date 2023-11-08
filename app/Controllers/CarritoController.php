@@ -14,15 +14,13 @@ public function index()
         $categoria = new CategoriaModel();
 
         $data['categorias'] = $categoria->findAll();
-        $producto=new ProductoModel();
+        $producto = new ProductoModel();
         $data['titulo'] = 'Carrito de compras';
         echo view('front/head_view',$data);
         echo view('front/navbar_view');
-        echo view('front/carrito_view');
+        echo view('back/carrito/carrito_view');
         echo view('front/footer_view');
     }
-
-
 
 	public function agregar_carrito()
 	{
@@ -79,5 +77,14 @@ public function disminuir($id){
   $cart->update($data);
 
   return redirect()->route('ver_carrito');
+  }
+
+  public function carritoConstruccion()
+  {
+      $data['titulo']='carrito';
+      echo view('front/head_view',$data);
+      echo view('front/navbar_view');
+      echo view('back/carrito/carritoConstruccion');
+      echo view('front/footer_view');
   }
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-11-2023 a las 19:29:28
+-- Tiempo de generación: 08-11-2023 a las 07:28:09
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -62,10 +62,12 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id_producto`, `cod_producto`, `nombre_producto`, `descripcion`, `precio`, `stock`, `categoria_id`, `imagen`) VALUES
-(1, 12345678, 'Prueba1', 'Este producto blabla', '4200.00', 1, 1, 'mom1.jpeg'),
-(2, 87654321, 'Prueba2', 'Este producto blabla', '5600.00', 12, 1, 'nahir.jpg'),
-(3, 44444, 'Prueba3', 'Este producto blabla', '8000.00', 5, 2, 'lourdes.jpg'),
-(4, 55555, 'Prueba4', 'Este producto blabla', '3000.00', 9, 2, 'matias.jpg');
+(1, 12345678, 'Mom gris', 'Jean mom con rotura', '15000.00', 1, 2, 'jean1.webp'),
+(2, 87654321, 'Cargo azul', 'Jean cargo jogger', '12600.00', 12, 2, 'jean2.webp'),
+(4, 6666, 'Rotura celeste', 'Jean mom con rotura', '13000.00', 16, 2, 'jean3.webp'),
+(7, 990099, 'Luna gris', 'Remera con estampa de lunas', '9000.00', 14, 1, 'remera1.jpg'),
+(8, 45455, 'Esqueleto negra', 'Remera con estampa de esqueleto', '7000.00', 5, 1, 'remera2.jpg'),
+(9, 47777, 'Car blanca', 'Remera con estampa de car', '8000.00', 7, 1, 'remera3.jpg');
 
 -- --------------------------------------------------------
 
@@ -83,8 +85,8 @@ CREATE TABLE `producto_categoria` (
 --
 
 INSERT INTO `producto_categoria` (`id_categoria`, `descripcion_categoria`) VALUES
-(1, 'Categoria 1'),
-(2, 'Categoria 2');
+(1, 'Remeras'),
+(2, 'Jeans');
 
 -- --------------------------------------------------------
 
@@ -108,9 +110,6 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `usuario`, `email`, `pass`, `perfil_id`, `baja`) VALUES
-(1, 'Lourdes', 'Duarte', 'lour', 'duarte@gmail.com', '$2y$10$FzaTHpF9KzXS1cdykAxQ9e8uvZwr6bvma8WgQtSw1bXxIUDZPUI5q', 1, 'NO'),
-(2, 'matias', 'laforcada', 'mati', 'laforca@gmail.com', '$2y$10$Buv8MOEmxg568JBZ/vektuGrxgOUK9Ll.GiYTNZLcHS46v9dARVOm', 1, 'NO'),
-(3, 'maria', 'gomez', 'maria', 'mar@gmail.com', '$2y$10$sfqm92MySV.K3bnWkIM/XerDr3tpuzZoLTASmHqd5FoOuoGIqzv9G', 2, 'NO'),
 (4, 'brenda', 'castillo', 'brenda castillo', 'brenda@gmail.com', '$2y$10$R6qEBNJTFcafldrkxEk.yu34KX1.PBe8qIeswuWAwVQNPm2ry7yS2', 1, 'NO'),
 (11, 'ezequiel', 'zabala', 'eze', 'eze@gmail.com', '$2y$10$xzuf5X34OQ6pCf2YC.kkXeJj1FaumB64x5E9VbQ2.eOL1APnJx1Jy', 2, 'SI'),
 (12, 'mia', 'castillo', 'mia', 'mia@gmail.com', '$2y$10$MdGtDoEX9A5RDU4SNw0WoObYFCRlBGKKtZ59F8tF75YUiZyYAbz.u', 2, 'NO');
@@ -157,7 +156,7 @@ ALTER TABLE `perfiles`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

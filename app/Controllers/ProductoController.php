@@ -25,7 +25,34 @@ public function categoria_productos($id=null){
     $data['titulo'] = 'Productos';
     echo view('front/head_view',$data);
     echo view('front/navbar_view');
-    echo view('front/listar_productos_view');
+    echo view('back/producto/listar_productos_view');
     echo view('front/footer_view');
   }
+  
+  public function f_listar_productos($id=null){
+    $categoria = new CategoriaModel();
+    $data['categorias'] = $categoria->findAll();
+
+    $producto=new ProductoModel();
+    $data['producto']=$producto->findAll();
+
+$data['titulo'] = 'Lista de productos';
+echo view('front/head_view',$data);
+echo view('front/navbar_view');
+echo view('back/producto/listar_productos_view');
+echo view('front/footer_view');
+}
+
+public function f_listar_productos_admi($id=null){
+    $categoria= new CategoriaModel();
+    $producto=new ProductoModel();
+
+    $data['categorias']=$categoria->findAll();
+    $data['producto']=$producto->getProductoAll();
+    $data['titulo'] = 'Listado de productos';
+    echo view('front/head_view',$data);
+    echo view('front/navbar_view');
+    echo view('back/producto/listar_productos_admi');
+    echo view('front/footer_view');
+}
 }
